@@ -1,9 +1,9 @@
 # -- Mapping between IP and hostnames that will be injected as entries in the pod's hosts files
 # https://kubernetes.io/docs/tasks/network/customize-hosts-file-for-pods/
 hostAliases: []
-  # - ip: 10.20.30.40
-  #   hostnames:
-  #   - gitea-127.0.0.1.sslip.io
+# - ip: 10.20.30.40
+#   hostnames:
+#   - gitea-127.0.0.1.sslip.io
 
 image:
   repository: drone/drone
@@ -34,15 +34,15 @@ serviceAccount:
 automountServiceAccountToken: false
 
 podSecurityContext: {}
-  # fsGroup: 2000
+# fsGroup: 2000
 
 securityContext: {}
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
+# capabilities:
+#   drop:
+#   - ALL
+# readOnlyRootFilesystem: true
+# runAsNonRoot: true
+# runAsUser: 1000
 
 ## Add extra annotations to the Drone server pods here. See below example for
 ## Prometheus scrape annotations.
@@ -66,25 +66,25 @@ service:
 ingress:
   enabled: false
   annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+  # kubernetes.io/ingress.class: nginx
+  # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: dominio_do_drone.com
-      paths:
-        - path: /
-          pathType: Prefix
+  - host: e11e-2804-431-cfd9-b603-f7f8-e862-58fb-56a9.ngrok-free.app
+    paths:
+    - path: /
+      pathType: Prefix
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
 
 resources: {}
-  # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
+# limits:
+#   cpu: 100m
+#   memory: 128Mi
+# requests:
+#   cpu: 100m
+#   memory: 128Mi
 
 ## If you'd like to force the Drone server to run on a specific node or set of nodes,
 ## set a selector here.
@@ -118,7 +118,7 @@ persistentVolume:
   ## Ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
   ##
   accessModes:
-    - ReadWriteOnce
+  - ReadWriteOnce
 
   ## Drone server data Persistent Volume annotations
   ##
@@ -183,7 +183,7 @@ env:
   ## REQUIRED: Set the user-visible Drone hostname, sans protocol.
   ## Ref: https://docs.drone.io/installation/reference/drone-server-host/
   ##
-  DRONE_SERVER_HOST: dominio_do_drone.com
+  DRONE_SERVER_HOST: e11e-2804-431-cfd9-b603-f7f8-e862-58fb-56a9.ngrok-free.app
   ## The protocol to pair with the value in DRONE_SERVER_HOST (http or https).
   ## Ref: https://docs.drone.io/installation/reference/drone-server-proto/
   ##
@@ -194,9 +194,9 @@ env:
   ## key via a separately provisioned secret (see existingSecretName above).
   ## Ref: https://docs.drone.io/installation/reference/drone-rpc-secret/
   ##
-  DRONE_RPC_SECRET: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  #gerado no seu linux(no meu caso) a partir desse comando: openssl rand -hex 16
-  DRONE_USER_CREATE: username:seu_usuario_git,admin:true
-  DRONE_USER_FILTER: seu_usuario_git
+  DRONE_RPC_SECRET: 05d2e2c27ee24dd0d8434c65afc72e39 #gerado no seu linux(no meu caso) a partir desse comando: openssl rand -hex 16
+  DRONE_USER_CREATE: username:claudioferejes,admin:true
+  DRONE_USER_FILTER: claudioferejes
 
   ## If you'd like to use a DB other than SQLite (the default), set a driver + DSN here.
   ## Ref: https://docs.drone.io/installation/storage/database/
@@ -227,9 +227,9 @@ env:
   ## GitHub-specific variables. See the provider docs here:
   ## Ref: https://docs.drone.io/installation/providers/github/
   ##
-  DRONE_GITHUB_CLIENT_ID: xxxxxxxxxxxxxxxxxxxx   #git ID gerado em: Settings > Developer settings  > OAuth Apps
+  DRONE_GITHUB_CLIENT_ID: 338b896ac5c8c199beb5 #git ID gerado em: Settings > Developer settings  > OAuth Apps
 
-  DRONE_GITHUB_CLIENT_SECRET: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  #git secret gerado em: Settings > Developer settings  > OAuth Apps
+  DRONE_GITHUB_CLIENT_SECRET: faffa5804f997d7df12e6e9261f8b68a253633d7 #git secret gerado em: Settings > Developer settings  > OAuth Apps
 
   ## GitLab-specific variables. See the provider docs here:
   ## Ref: https://docs.drone.io/installation/providers/gitlab/

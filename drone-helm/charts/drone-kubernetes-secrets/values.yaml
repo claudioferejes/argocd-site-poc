@@ -19,15 +19,15 @@ nameOverride: ""
 fullnameOverride: ""
 
 podSecurityContext: {}
-  # fsGroup: 2000
+# fsGroup: 2000
 
 securityContext: {}
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
+# capabilities:
+#   drop:
+#   - ALL
+# readOnlyRootFilesystem: true
+# runAsNonRoot: true
+# runAsUser: 1000
 
 ## Add extra annotations to the Kubernetes pod here.
 ##
@@ -38,12 +38,12 @@ service:
   port: 3000
 
 resources: {}
-  # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
+# limits:
+#   cpu: 100m
+#   memory: 128Mi
+# requests:
+#   cpu: 100m
+#   memory: 128Mi
 
 ## If you'd like to force the pod to run on a specific node or set of nodes, set a selector here.
 ##
@@ -85,7 +85,7 @@ env:
   ## This is commented out in order to leave you the ability to set the
   ## key via a separately provisioned secret (see existingSecretName above).
   ##
-  SECRET_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  #gerado no seu linux(no meu caso) a partir desse comando: openssl rand -hex 16 mesmo configurado no values do drone server
+  SECRET_KEY: 05d2e2c27ee24dd0d8434c65afc72e39 #gerado no seu linux(no meu caso) a partir desse comando: openssl rand -hex 16 mesmo configurado no values do drone server
 
   ## The Kubernetes namespace to retrieve secrets from.
   ##

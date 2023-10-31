@@ -48,7 +48,7 @@ ingress:
   # kubernetes.io/ingress.class: nginx
   # kubernetes.io/tls-acme: "true"
   hosts:
-  - host: chart-example.local
+  - host: e11e-2804-431-cfd9-b603-f7f8-e862-58fb-56a9.ngrok-free.app
     paths:
     - path: /
       pathType: Prefix
@@ -127,7 +127,7 @@ env:
   ## The protocol to use for communication with Drone server.
   ## Ref: https://kube-runner.docs.drone.io/installation/reference/drone-rpc-proto/
   ##
-  DRONE_RPC_PROTO: http
+  DRONE_RPC_PROTO: https
 
   ## Determines the default Kubernetes namespace for Drone builds to run in.
   ## Ref: https://kube-runner.docs.drone.io/installation/reference/drone-namespace-default/

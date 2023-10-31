@@ -17,27 +17,27 @@ metadata:
   namespace: argocd
   ### ATENCAO: o parametro finalizer abaixo deleta dodos os pods e namespace criada pelo arquivo application.yml quando usado o comando kubectl delete application.yml
   finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  - resources-finalizer.argocd.argoproj.io
 
 spec:
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: drone-space
-  project: default  
+  project: default
   source:
-    repoURL: 'https://github.com/uzieljr/deploy-applications.git'
+    repoURL: 'https://github.com/claudioferejes/argocd-site-poc-dev.git'
     path: drone-helm/charts/drone
     targetRevision: HEAD
     helm:
       #releaseName: drone-server
       valueFiles:
-        - values.yaml
-  syncPolicy:   
+      - values.yaml
+  syncPolicy:
     automated:
       selfHeal: true
       prune: true
     syncOptions:
-      - PruneLast=true  
+    - PruneLast=true
 
 
 ---
@@ -55,13 +55,13 @@ metadata:
   namespace: argocd
   ### ATENCAO: o parametro finalizer abaixo deleta dodos os pods e namespace criada pelo arquivo application.yml quando usado o comando kubectl delete application.yml
   finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  - resources-finalizer.argocd.argoproj.io
 
 spec:
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: drone-space
-  project: default  
+  project: default
   source:
     repoURL: 'https://github.com/uzieljr/deploy-applications.git'
     path: drone-helm/charts/drone-runner-kube
@@ -69,11 +69,11 @@ spec:
     helm:
       #SreleaseName: drone-runer    
       valueFiles:
-        - values.yaml
-  syncPolicy:   
+      - values.yaml
+  syncPolicy:
     automated:
       selfHeal: true
-      prune: true      
+      prune: true
 
 ---
 
@@ -90,13 +90,13 @@ metadata:
   namespace: argocd
   ### ATENCAO: o parametro finalizer abaixo deleta dodos os pods e namespace criada pelo arquivo application.yml quando usado o comando kubectl delete application.yml
   finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  - resources-finalizer.argocd.argoproj.io
 
 spec:
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: drone-space
-  project: default  
+  project: default
   source:
     repoURL: 'https://github.com/uzieljr/deploy-applications.git'
     path: drone-helm/charts/drone-kubernetes-secrets
@@ -104,8 +104,8 @@ spec:
     helm:
       #SreleaseName: drone-runer    
       valueFiles:
-        - values.yaml
-  syncPolicy:   
+      - values.yaml
+  syncPolicy:
     automated:
       selfHeal: true
-      prune: true   
+      prune: true

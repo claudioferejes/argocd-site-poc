@@ -63,7 +63,7 @@ spec:
     namespace: drone-space
   project: default
   source:
-    repoURL: 'https://github.com/claudioferejes/argocd-site-poc.gi'
+    repoURL: 'https://github.com/claudioferejes/argocd-site-poc.git'
     path: drone-helm/charts/drone-runner-kube
     targetRevision: HEAD
     helm:
@@ -98,7 +98,7 @@ spec:
     namespace: drone-space
   project: default
   source:
-    repoURL: 'https://github.com/claudioferejes/argocd-site-poc.gi'
+    repoURL: 'https://github.com/claudioferejes/argocd-site-poc.git'
     path: drone-helm/charts/drone-kubernetes-secrets
     targetRevision: HEAD
     helm:

@@ -48,7 +48,7 @@ ingress:
   # kubernetes.io/ingress.class: nginx
   # kubernetes.io/tls-acme: "true"
   hosts:
-  - host: e11e-2804-431-cfd9-b603-f7f8-e862-58fb-56a9.ngrok-free.app
+  - host: e777-2804-431-cfd9-b603-129c-7e4-56d4-6d4d.ngrok-free.app
     paths:
     - path: /
       pathType: Prefix

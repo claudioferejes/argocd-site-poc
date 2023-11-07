@@ -69,7 +69,7 @@ ingress:
   # kubernetes.io/ingress.class: nginx
   # kubernetes.io/tls-acme: "true"
   hosts:
-  - host: e777-2804-431-cfd9-b603-129c-7e4-56d4-6d4d.ngrok-free.app
+  - host: 
     paths:
     - path: /
       pathType: Prefix
@@ -194,7 +194,7 @@ env:
   ## key via a separately provisioned secret (see existingSecretName above).
   ## Ref: https://docs.drone.io/installation/reference/drone-rpc-secret/
   ##
-  DRONE_RPC_SECRET: 05d2e2c27ee24dd0d8434c65afc72e39 #gerado no seu linux(no meu caso) a partir desse comando: openssl rand -hex 16
+  DRONE_RPC_SECRET:  #gerado no seu linux(no meu caso) a partir desse comando: openssl rand -hex 16
   DRONE_USER_CREATE: username:claudioferejes,admin:true
   DRONE_USER_FILTER: claudioferejes
 
@@ -227,9 +227,9 @@ env:
   ## GitHub-specific variables. See the provider docs here:
   ## Ref: https://docs.drone.io/installation/providers/github/
   ##
-  DRONE_GITHUB_CLIENT_ID: 30a454e9963c18c21760 #git ID gerado em: Settings > Developer settings  > OAuth Apps
+  DRONE_GITHUB_CLIENT_ID:  #git ID gerado em: Settings > Developer settings  > OAuth Apps
 
-  DRONE_GITHUB_CLIENT_SECRET: ec752cc82b21389db4680ccc7480feda95c8b427 #git secret gerado em: Settings > Developer settings  > OAuth Apps
+  DRONE_GITHUB_CLIENT_SECRET:  #git secret gerado em: Settings > Developer settings  > OAuth Apps
 
   ## GitLab-specific variables. See the provider docs here:
   ## Ref: https://docs.drone.io/installation/providers/gitlab/
